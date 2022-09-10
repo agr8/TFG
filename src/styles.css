@@ -1,0 +1,26 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+body, html {
+    height: 100%;
+    margin: 0.3px;
+   
+}
+#videos{
+    height: 100%;
+}
+
+
+.navbar {   
+    background-color: #87CEEB; 
+
+}
+
+
+footer{
+    background-color:
+     #87CEEB;
+    padding: 0px 0px 0px 0px
+}
+footer .py-5{
+    padding: 0px;
+}
+

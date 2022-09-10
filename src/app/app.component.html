@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Angela Gallardo">
+    <title>Demo TFG</title>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+     
+    <header>         
+      <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="navbar-brand " >
+              <a class="nav-link" href="/client">
+
+                <h1>Demo TFG</h1>
+              </a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <h2>
+                  <strong>Sistema de videoconferencias</strong>
+                </h2>
+              </a>
+            </li>
+        
+          </ul>
+      </nav> 
+        
+    </header>
+      
+      <main>
+        <div class="album py-5 bg-light" id="contenido">
+          <div class="container">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="text-muted py-5">
+        <div class="container">
+          <p class="mb-1">TFG del Grado en Ingeniería Informática - Ángela Gallardo Ruiz - 12 de septiembre de 2022</p>
+        </div>
+      </footer>
+  </body>
+</html>
