@@ -73,9 +73,6 @@ class VideoDeFichero(MediaStreamTrack):
 
 
 class VideoTransformTrack(MediaStreamTrack):
-    """
-    A video stream track that transforms frames from an another track.
-    """
 
     kind = "video"
 
@@ -192,19 +189,7 @@ async def start_call(sid, data):
         if pc.connectionState == "failed":
             await pc.close()
             pcs.discard(pc)
-        # elif pc.connectionState == "connected":
-        #     pc.addTrack(VideoDeFichero('Cat.mp4'))
-
-            # # negotiate
-            # # handle offer
-            # await pc.setRemoteDescription(offer)
-
-            # # send answer
-            # answer = await pc.createAnswer()
-            # await pc.setLocalDescription(answer)
-
-            # await sio.emit('call-started', data=asdict(pc.localDescription), to=sid)
-
+       
     @pc.on("track")
     def on_track(track):
 
@@ -268,34 +253,13 @@ async def start_call(sid, data):
         senders = []
         
         for sender in pc.getSenders():
-        #     # print('sender encontrado: ', sender)
-        #     # sender.replaceTrack(videoObj)
             senders.append(sender)
-        #     sender.replaceTrack(videoObj)
-        # print('videoObject --> ',videoObj.kind)
-        # s1.replaceTrack(videoObj)
-        # print(s1.replaceTrack(videoObj))
-    
-        # for sender in pc.getSenders():
-        #     # sender.replaceTrack(videoObj)
-        #     print('sender encontrado: ',   sender.replaceTrack(videoObj))
-       
+     
        
         await senders[2].stop()
         senderStopped = senders[2].track
         await sio.emit('senderstopped', data=senderStopped, to=sid)
         print('senerstopped')
-
-        # for t in pc.getTransceivers():
-        #     print('transceivers : ', t)
-        #     if videoObj != None  and videoObj.kind == t.kind :
-        #         senders[2].replaceTrack(videoObj)
-        #         print('holaaaaaaaaaaaaaaaaaaaaaaa')
-        #         if t.stop is True:
-        #             print('error transceiver stopped')
-
-        #     else:
-        #         print('error')
 
 async def on_shutdown(app):
     # close peer connections
